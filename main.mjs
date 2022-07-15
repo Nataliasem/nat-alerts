@@ -1,18 +1,16 @@
-import './notify.css'
-
 const showAlert = (message, type = 'default') => {
     if (!message) {
         return
     }
 
     const alertElement = document.createElement('div')
-    alertElement.classList.add('ld-alert', 'fade-in', `ld-alert-${type}`)
+    alertElement.classList.add('nat-alert', 'fade-in', `nat-alert-${type}`)
     alertElement.innerText = message
 
-    let alertWrapper = document.getElementById('ld-alert-wrapper')
+    let alertWrapper = document.getElementById('nat-alert-wrapper')
     if (!alertWrapper) {
         alertWrapper = document.createElement('div')
-        alertWrapper.id = 'ld-alert-wrapper'
+        alertWrapper.id = 'nat-alert-wrapper'
         document.body.appendChild(alertWrapper)
     }
 
@@ -21,7 +19,7 @@ const showAlert = (message, type = 'default') => {
     const clearDom = () => {
         alertElement.remove()
 
-        const alerts = document.querySelectorAll('.ld-alert')
+        const alerts = document.querySelectorAll('.nat-alert')
 
         if (alertWrapper && alerts.length === 0) {
             alertWrapper.remove()
